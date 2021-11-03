@@ -6,3 +6,10 @@
 .text-medium { font-size: $medium; }
 .text-small { font-size: $small; }
 .text-small2 { font-size: $small2; }
+
+.text-pad-small-top { padding-top: $small; }
+.text-pad-small-bottom { padding-bottom: $small; }
+.text-pad-small-both {
+  @extend .text-pad-small-top;
+  @extend .text-pad-small-bottom;
+}
