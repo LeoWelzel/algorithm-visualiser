@@ -1,10 +1,7 @@
 import React from 'react'
+import { BasicProps, HasChildren } from './basicProps';
 
-export interface FlexContainerProps {
-  style?: React.CSSProperties;
-  className?: string;
-  children?: React.ReactNode;
-}
+export interface FlexContainerProps extends BasicProps, HasChildren {}
 
 interface FlexContainerDirection {
   flexDirection: 'row' | 'column';

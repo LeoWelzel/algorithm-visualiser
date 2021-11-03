@@ -1,3 +1,17 @@
+@import './index.scss';
+@import './styles/Responsive.scss';
+
 .page-container {
   min-height: 100vh;
+}
+
+.page-body {
+  margin: $large2;
+  width: 60%;
+}
+
+@media screen and (max-width: $responsive-max-width) {
+  .page-body {
+    width: 100%;
+  }
 }

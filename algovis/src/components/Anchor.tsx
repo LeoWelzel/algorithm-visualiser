@@ -1,14 +1,12 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import { BasicProps, HasChildren } from '../common/basicProps';
 
 import './Anchor.scss'
 
-interface AnchorProps {
+interface AnchorProps extends BasicProps, HasChildren {
   route: string;
   color?: boolean;
-  style?: React.CSSProperties;
-  className?: string;
-  children?: React.ReactNode;
   hoverColour?: string;
 }
 
