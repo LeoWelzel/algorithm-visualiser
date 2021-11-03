@@ -12,7 +12,6 @@ import './Bar.scss'
 export const Footer = () => {
   const mainFlex = 10;
 
-  // TODO: onClick for all header/footer things
   // TODO: make responsive
   return (
     <Column className='unselectable bar-container'>

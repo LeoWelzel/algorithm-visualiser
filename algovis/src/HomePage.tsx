@@ -1,45 +1,65 @@
 import React from 'react'
 import FadeIn from 'react-fade-in';
-import { HasChildren } from './common/basicProps';
+import { Row } from './common/Row';
+import { Spacer } from './common/Spacer';
+import { Subtitle, Title } from './common/Text';
+import { Card } from './components/Card';
+import { Grid } from './components/Grid';
 
 import './styles/Text.scss'
-
-const Title = (props: HasChildren) => 
-  <div className='text-large3 text-pad-small-bottom'>
-    { props.children }
-  </div>
-
-const Body = (props: HasChildren) => 
-  <div className='text-pad-small-bottom'>
-    { props.children }
-  </div>
 
 export const HomePage = () => {
   return (
     <FadeIn>
-      <Title>
-        About
-      </Title>
-      <Body>
-        Lorem ipsum dolor sit amet consectetur,
-        adipisicing elit. Sit, suscipit veritatis.
-        Libero dolores consequatur id, repellat
-        exercitationem expedita error eligendi
-        eius iusto laboriosam distinctio et dicta
-        quam fuga nisi odit!
-      </Body>
-      <Title>
-        Lorem ipsum dolor
-      </Title>
-      <Body>
-        Lorem ipsum dolor sit amet consectetur,
-        adipisicing elit.
-        <br/><br/>Sit, suscipit veritatis.
-        Libero dolores consequatur id, repellat
-        exercitationem expedita error eligendi
-        eius iusto laboriosam distinctio et dicta
-        quam fuga nisi odit!
-      </Body>
+      <Row>
+        <Spacer/>
+        <Title className='text-align-center'>
+          Building the future of algorithm visualisation
+        </Title>
+        <Spacer/>
+      </Row>
+      <Row>
+        <Spacer/>
+        <Subtitle className='text-align-center'>
+          Use our visualisations, powered by state-of-the-art AI and revolutionary Big Data pipelines
+        </Subtitle>
+        <Spacer/>
+      </Row>
+      <div style={{ height: '2rem' }}/>
+      <Grid>
+        <Card>
+          Sorting algorithms
+          <br/><br/>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Numquam asperiores iste nisi repudiandae consequuntur cupiditate modi,
+          quidem illo dignissimos adipisci optio nostrum aliquid nulla,
+          excepturi eius sapiente distinctio quibusdam qui!
+        </Card>
+        <Card>
+          Search algorithms
+          <br/><br/>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Numquam asperiores iste nisi repudiandae consequuntur cupiditate modi,
+          quidem illo dignissimos adipisci optio nostrum aliquid nulla,
+          excepturi eius sapiente distinctio quibusdam qui!
+        </Card>
+        <Card>
+          Pathfinding algorithms
+          <br/><br/>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Numquam asperiores iste nisi repudiandae consequuntur cupiditate modi,
+          quidem illo dignissimos adipisci optio nostrum aliquid nulla,
+          excepturi eius sapiente distinctio quibusdam qui!
+        </Card>
+        <Card>
+          TODO: think of something
+          <br/><br/>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Numquam asperiores iste nisi repudiandae consequuntur cupiditate modi,
+          quidem illo dignissimos adipisci optio nostrum aliquid nulla,
+          excepturi eius sapiente distinctio quibusdam qui!
+        </Card>
+      </Grid>
     </FadeIn>
   )
 }

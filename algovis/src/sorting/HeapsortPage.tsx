@@ -1,9 +1,13 @@
 import React from 'react'
+import { SortingCanvas } from './SortingCanvas'
+
+
 
 export const HeapsortPage = () => {
   return (
-    <div>
-      Heapsort page
-    </div>
+    <SortingCanvas
+      width={400}
+      height={400}
+    />
   )
 }

@@ -1,0 +1,14 @@
+@import '../index.scss';
+@import '../styles/Hover.scss';
+
+.card-container {
+  @extend .hover-cursor-pointer;
+  border-radius: $vsmall;
+  padding: $large2;
+  margin: $medium;
+  border: 1px solid $white4;
+
+  &:hover {
+    background: $white5;
+  }
+}
