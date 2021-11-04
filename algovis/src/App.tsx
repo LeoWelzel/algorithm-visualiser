@@ -11,16 +11,18 @@ import { HomePage } from './HomePage';
 import { Routes } from './routes';
 import { SortRouter } from './sorting/SortRouter';
 
-import './Page.scss'
+import './App.scss'
 
 export const App = () => {
+  // TODO: page-body width and height
+
   return (
     <BrowserRouter>
       <Column className='page-container'>
         <Header/>
         <Spacer>
           <Row>
-            <Spacer/>
+            <Spacer className='page-body-spacer'/>
             <div className='page-body'>
               <Switch>
                 <Route exact={ true } path={ Routes.home } component={ HomePage }/>
@@ -29,7 +31,7 @@ export const App = () => {
                 <Route exact={ true } path={ '*' } component={ DefaultPage } />
               </Switch>
             </div>
-            <Spacer/>
+            <Spacer className='page-body-spacer'/>
           </Row>
         </Spacer>
         <Footer/>
