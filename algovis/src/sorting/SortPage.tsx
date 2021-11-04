@@ -4,27 +4,17 @@ import { Route, Switch } from 'react-router-dom';
 import { HasSize } from '../common/hasSize';
 import { DefaultPage } from '../DefaultPage';
 import { Routes } from '../routes';
-import { shuffle } from '../util/shuffle';
-import { SortingAlgorithmEnum } from './algorithm';
+import { randomArray } from '../util/randomArray';
+import { SortingAlgorithmEnum } from './algorithmEnum';
 import { SortingRoutes } from './routes';
 import { SortAlgoPageTemplate } from './SortAlgoPageTemplate';
 import { SortHomePage } from './SortHomePage';
 
 export const SortPage = (props: HasSize) => {
-  const [arrayLength, setArrayLength] = useState(64);
-
-  const randomArray = (length: number) => {
-    const arr = [];
-
-    for (let i = 1; i <= length; i++)
-      arr.push(i);
-
-    shuffle(arr);
-
-    return arr;
-  }
+  const arrayLength = 64;
 
   const [array, setArray] = useState(randomArray(arrayLength));
+  const [running, setRunning] = useState(false);
 
   return (
     <FadeIn>
@@ -34,22 +24,34 @@ export const SortPage = (props: HasSize) => {
         </Route>
         <Route path={ SortingRoutes.quicksort }>
           <SortAlgoPageTemplate
+            running={ running }
+            setRunning={ setRunning }
             array={ array }
-            selectedIndex={ SortingAlgorithmEnum.Quicksort }
+            setArray={ setArray }
+            resetArray={ () => setArray(randomArray(arrayLength)) }
+            algorithm={ SortingAlgorithmEnum.Quicksort }
             { ...props }
           />
         </Route>
         <Route path={ SortingRoutes.mergesort }>
           <SortAlgoPageTemplate
+            running={ running }
+            setRunning={ setRunning }
             array={ array }
-            selectedIndex={ SortingAlgorithmEnum.Mergesort }
+            setArray={ setArray }
+            resetArray={ () => setArray(randomArray(arrayLength)) }
+            algorithm={ SortingAlgorithmEnum.Mergesort }
             { ...props }
           />
         </Route>
         <Route path={ SortingRoutes.heapsort }>
           <SortAlgoPageTemplate
+            running={ running }
+            setRunning={ setRunning }
             array={ array }
-            selectedIndex={ SortingAlgorithmEnum.Heapsort }
+            setArray={ setArray }
+            resetArray={ () => setArray(randomArray(arrayLength)) }
+            algorithm={ SortingAlgorithmEnum.Heapsort }
             { ...props }
           />
         </Route>

@@ -1,11 +1,15 @@
 import React from 'react'
 import FadeIn from 'react-fade-in'
 import { Body, Title } from '../common/Text'
-import { Card } from '../components/Card'
 import { Grid } from '../components/Grid'
 import { PageTextPadding } from '../PageTextPadding'
+import { DemoCard } from './DemoCard'
+import { SortingAlgorithmEnum } from './algorithmEnum'
+import { randomArray } from '../util/randomArray'
 
 export const SortHomePage = () => {
+  const cardArrayLength = 16;
+
   return (
     <FadeIn>
       <PageTextPadding bottom={ false }>
@@ -25,30 +29,18 @@ export const SortHomePage = () => {
         </Body>
       </PageTextPadding>
       <Grid>
-        <Card>
-          Quicksort - TODO: put sorting canvases in these cards
-          <br/><br/>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Numquam asperiores iste nisi repudiandae consequuntur cupiditate modi,
-          quidem illo dignissimos adipisci optio nostrum aliquid nulla,
-          excepturi eius sapiente distinctio quibusdam qui!
-        </Card>
-        <Card>
-          Mergesort - TODO: put sorting canvases in these cards
-          <br/><br/>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Numquam asperiores iste nisi repudiandae consequuntur cupiditate modi,
-          quidem illo dignissimos adipisci optio nostrum aliquid nulla,
-          excepturi eius sapiente distinctio quibusdam qui!
-        </Card>
-        <Card>
-          Heapsort - TODO: put sorting canvases in these cards
-          <br/><br/>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Numquam asperiores iste nisi repudiandae consequuntur cupiditate modi,
-          quidem illo dignissimos adipisci optio nostrum aliquid nulla,
-          excepturi eius sapiente distinctio quibusdam qui!
-        </Card>
+        <DemoCard
+          algorithm={ SortingAlgorithmEnum.Quicksort }
+          array={ randomArray(cardArrayLength) }
+        />
+        <DemoCard
+          algorithm={ SortingAlgorithmEnum.Mergesort }
+          array={ randomArray(cardArrayLength) }
+        />
+        <DemoCard
+          algorithm={ SortingAlgorithmEnum.Heapsort }
+          array={ randomArray(cardArrayLength) }
+        />
       </Grid>
     </FadeIn>
   )

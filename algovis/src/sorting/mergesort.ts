@@ -9,7 +9,7 @@ export const mergesort: SortingAlgorithm = (array: SortingType[]) => {
   const arrayCopy = [...array];
   const arrayStates: SortingType[][] = [];
 
-  helperMergesort(arrayStates, array, 0, arrayCopy.length);
+  helperMergesort(arrayStates, arrayCopy, 0, arrayCopy.length);
 
   return arrayStates;
 }

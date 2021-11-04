@@ -9,7 +9,7 @@ export const quicksort: SortingAlgorithm = (array: SortingType[]) => {
   const arrayCopy = [...array];
   const arrayStates: SortingType[][] = [];
 
-  helperQuicksort(arrayStates, array, 0, arrayCopy.length);
+  helperQuicksort(arrayStates, arrayCopy, 0, arrayCopy.length);
 
   return arrayStates;
 }

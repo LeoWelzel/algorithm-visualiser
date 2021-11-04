@@ -7,7 +7,7 @@
 
 .button-red {
   @extend .button;
-  color: $white5;
+  color: white;
   background: $red3;
   border: 1px solid darken($red3, $lighten-by);
   &:hover {
@@ -16,7 +16,7 @@
 }
 .button-green {
   @extend .button;
-  color: $white5;
+  color: white;
   background: $green3;
   border: 1px solid darken($green3, $lighten-by);
   &:hover {
@@ -25,7 +25,7 @@
 }
 .button-blue {
   @extend .button;
-  color: $white5;
+  color: white;
   background: $blue3;
   border: 1px solid darken($blue3, $lighten-by);
   &:hover {

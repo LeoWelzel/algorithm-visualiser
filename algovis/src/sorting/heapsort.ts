@@ -5,11 +5,11 @@ import { SortingAlgorithm, SortingType } from './sort';
  * @param array The array to perform heapsort on.
  * @returns A list of states the array transitioned through.
  */
-export const Heapsort: SortingAlgorithm = (array: SortingType[]) => {
+export const heapsort: SortingAlgorithm = (array: SortingType[]) => {
   const arrayCopy = [...array];
   const arrayStates: SortingType[][] = [];
 
-  helperHeapsort(arrayStates, array, 0, arrayCopy.length);
+  helperHeapsort(arrayStates, arrayCopy, 0, arrayCopy.length);
 
   return arrayStates;
 }

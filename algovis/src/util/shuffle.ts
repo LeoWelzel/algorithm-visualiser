@@ -2,7 +2,7 @@
  * Shuffles the array in-place.
  * @param array The array to shuffle.
  */
-export const shuffle = (array: number[]) => {
+export const shuffleArray = (array: number[]) => {
   let currentIndex = array.length;
 
   while (currentIndex !== 0) {

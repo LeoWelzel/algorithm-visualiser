@@ -1,3 +1,6 @@
+import { heapsort } from "./heapsort";
+import { mergesort } from "./mergesort";
+import { quicksort } from "./quicksort";
 import { SortingRoutes } from "./routes";
 
 export enum SortingAlgorithmEnum {
@@ -29,3 +32,13 @@ export const getSortingAlgorithmPath = (algorithmEnum: SortingAlgorithmEnum) =>
   algorithmEnum === SortingAlgorithmEnum.Quicksort ? SortingRoutes.quicksort :
   algorithmEnum === SortingAlgorithmEnum.Mergesort ? SortingRoutes.mergesort :
   algorithmEnum === SortingAlgorithmEnum.Heapsort ? SortingRoutes.heapsort : '';
+
+export const getSortingAlgorithm = (algorithmEnum: SortingAlgorithmEnum) =>
+  algorithmEnum === SortingAlgorithmEnum.Quicksort ? quicksort :
+  algorithmEnum === SortingAlgorithmEnum.Mergesort ? mergesort : heapsort
+
+export const getSortingAlgorithmColour = (algorithmEnum: SortingAlgorithmEnum) =>
+  algorithmEnum === SortingAlgorithmEnum.Quicksort ? '#0000ff' :
+  algorithmEnum === SortingAlgorithmEnum.Mergesort ? '#00ffcc' : '#ccff00'
+
+// TODO: remove this and put straight in SortPage.tsx

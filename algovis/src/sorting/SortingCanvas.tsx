@@ -1,12 +1,13 @@
 import React from 'react'
 import { Canvas } from '../common/Canvas'
 import { HasSize, HasSizeRange } from '../common/hasSize';
+import { SortingType } from './sort';
 
 interface SortingCanvasProps extends HasSize, HasSizeRange {
   drawingWidthProportion: number;
   drawingHeightProportion: number;
   barProportion: number;
-  array: number[];
+  array: SortingType[];
 
   fillColour?: string;
   background?: string;
@@ -46,8 +47,6 @@ export const SortingCanvas = (props: SortingCanvasProps) => {
       )
     }
   }
-
-  console.log(width, height)
 
   return (
     <Canvas

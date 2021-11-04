@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { AboutPage } from './AboutPage';
 import { Column } from './common/Column';
@@ -10,27 +10,29 @@ import { DefaultPage } from './DefaultPage';
 import { HomePage } from './HomePage';
 import { Routes } from './routes';
 import { SortPage } from './sorting/SortPage';
-import { useWindowSize } from './common/useWindowSize';
+import { useComponentSize } from './common/useComponentSize';
 
 import './App.scss'
 
 export const App = () => {
-  const windowSize = useWindowSize();
-  const [bodyHeight, setBodyHeight] = useState(0);
-  const [bodyWidth, setBodyWidth] = useState(0);
+  // const windowSize = useWindowSize();
+  // const [bodyHeight, setBodyHeight] = useState(0);
+  // const [bodyWidth, setBodyWidth] = useState(0);
   const pageBodyRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const height = pageBodyRef.current?.clientHeight;
-    const width = pageBodyRef.current?.clientWidth;
+  const { width, height } = useComponentSize(pageBodyRef);
 
-    if (height)
-      setBodyHeight(height);
-    if (width)
-      setBodyWidth(width);
-  }, [windowSize])
+  // useEffect(() => {
+  //   const height = pageBodyRef.current?.clientHeight;
+  //   const width = pageBodyRef.current?.clientWidth;
 
-  // TODO: page-body width and height
+  //   if (height)
+  //     setBodyHeight(height);
+  //   if (width)
+  //     setBodyWidth(width);
+  // }, [windowSize])
+
+  // TODO: REMOVE page-body width and height
 
   return (
     <BrowserRouter>
@@ -44,8 +46,8 @@ export const App = () => {
               <Route exact={ true } path={ Routes.about } component={ AboutPage }/>
               <Route path={ Routes.sorting }>
                 <SortPage
-                  height={ bodyHeight }
-                  width={ bodyWidth }
+                  height={ height }
+                  width={ width }
                 />
               </Route>
               <Route exact={ true } path={ '*' } component={ DefaultPage } />
