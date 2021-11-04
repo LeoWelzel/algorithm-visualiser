@@ -11,22 +11,20 @@ const home = '/';
 const about = '/about';
 
 const sorting = '/sorting';
-const heapsort = '/heapsort';
-const mergesort = '/mergesort';
-const quicksort = '/quicksort';
+// const heapsort = '/heapsort';
+// const mergesort = '/mergesort';
+// const quicksort = '/quicksort';
 
-const sortingRoutes = {
-  heapsort: sorting + heapsort,
-  mergesort: sorting + mergesort,
-  quicksort: sorting + quicksort
-}
+// const sortingRoutes = {
+//   heapsort: sorting + heapsort,
+//   mergesort: sorting + mergesort,
+//   quicksort: sorting + quicksort
+// }
 
 export const Routes = {
   home: home,
   about: about,
   sorting: sorting,
-
-  sortingRoutes: sortingRoutes
 }
 
 

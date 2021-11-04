@@ -1,2 +1,20 @@
-$responsive-max-width: 501px;
-$responsive-min-width: 500px;
+$responsive-max-width: 500px;
+$responsive-min-width: 501px;
+
+@media screen and (min-width: $responsive-min-width) {
+  .responsive-hide-large, .responsive-hide-children-large {
+    display: none;
+  }
+  .responsive-hide-children-large * {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $responsive-max-width) {
+  .responsive-hide-small, .responsive-hide-children-small {
+    display: none;
+  }
+  .responsive-hide-children-small * {
+    display: none;
+  }
+}

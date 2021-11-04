@@ -7,17 +7,15 @@ import './Anchor.scss'
 interface AnchorProps extends BasicProps, HasChildren {
   route: string;
   color?: boolean;
-  hoverColour?: string;
 }
 
 export const Anchor = (props: AnchorProps) => {
   const history = useHistory();
 
-  const hoverColour = props.hoverColour ?? '#c133fe';
-  const style = { ...props.style, '&:hover': { color: hoverColour } }
-  const className = props.color === false ?
-    props.className :
-    'anchor-text ' + props.className ?? '';
+  const style = { ...props.style }
+  const className = 'hover-cursor-pointer ' +
+    (props.color === false ?
+      props.className : 'anchor-text ') + props.className ?? '';
 
   return (
     <div

@@ -8,8 +8,18 @@
 $page-body-padding: $large2;
 
 .page-body {
-  margin: $page-body-padding;
   width: 60%;
+}
+
+.page-body-text-padding-top {
+  padding-top: $page-body-padding;
+}
+.page-body-text-padding-bottom {
+  padding-bottom: $page-body-padding;
+}
+.page-body-text-padding-sides {
+  padding-left: $page-body-padding;
+  padding-right: $page-body-padding;
 }
 
 // TODO: use same responsivity as hugging-face

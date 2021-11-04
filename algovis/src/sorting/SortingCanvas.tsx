@@ -1,9 +1,8 @@
 import React from 'react'
 import { Canvas } from '../common/Canvas'
+import { HasSize } from '../common/hasSize';
 
-interface SortingCanvasProps {
-  width: number;
-  height: number;
+interface SortingCanvasProps extends HasSize {
   drawingWidthProportion: number;
   drawingHeightProportion: number;
   gapProportion: number;
@@ -14,7 +13,7 @@ interface SortingCanvasProps {
 }
 
 export const SortingCanvas = (props: SortingCanvasProps) => {
-  const fillColour = props.fillColour ?? '#ff00ff';
+  const fillColour = props.fillColour ?? '#29a0f0';
 
   const drawFunction = (context: CanvasRenderingContext2D, frameCount: number) => {
     context.fillStyle = fillColour;
@@ -40,7 +39,7 @@ export const SortingCanvas = (props: SortingCanvasProps) => {
     <Canvas
       width={ props.width }
       height={ props.height }
-      background={ props.background ?? '#c4c4c4' }
+      background={ props.background ?? '#fff' }
       drawFunction={ drawFunction }
     />
   )

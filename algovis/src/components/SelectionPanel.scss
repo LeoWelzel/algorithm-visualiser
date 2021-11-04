@@ -1,0 +1,17 @@
+@import '../index.scss';
+@import '../App.scss';
+@import '../styles/Responsive.scss';
+
+$selection-panel-padding: $page-body-padding;
+
+.selection-panel-padding {
+  padding: $selection-panel-padding;
+}
+
+.selection-panel-padding-sides {
+  padding: 0 $selection-panel-padding;
+}
+
+.selection-panel-selected {
+  color: $violet1;
+}

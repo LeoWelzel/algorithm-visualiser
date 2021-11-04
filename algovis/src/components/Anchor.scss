@@ -1,8 +1,6 @@
 @import '../styles/Hover.scss';
 
 .anchor-text {
-  @extend .hover-cursor-pointer;
-
   &:hover {
     color: #c133fe;
   }

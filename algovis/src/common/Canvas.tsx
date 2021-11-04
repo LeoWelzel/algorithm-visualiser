@@ -1,8 +1,7 @@
+import { HasSize } from './hasSize';
 import { DrawFunction, useCanvas } from './useCanvas';
 
-interface CanvasProps {
-  width: number;
-  height: number;
+interface CanvasProps extends HasSize {
   drawFunction: DrawFunction;
   background: string;
 }

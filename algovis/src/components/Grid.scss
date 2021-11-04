@@ -1,5 +1,7 @@
+@import '../App.scss';
+
 .grid {
   display: grid;
-  gap: 1rem;
+  gap: $page-body-padding;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
