@@ -1,7 +1,5 @@
 import React from 'react'
 import FadeIn from 'react-fade-in';
-import { Row } from './common/Row';
-import { Spacer } from './common/Spacer';
 import { Subtitle, Title } from './common/Text';
 import { Card } from './components/Card';
 import { Grid } from './components/Grid';
@@ -14,6 +12,7 @@ import { randomArray } from './util/randomArray';
 import './styles/Text.scss'
 
 export const HomePage = () => {
+  // TODO: fix sorting cards by storing their array props in hooks
   return (
     <PageTextPadding>
       <FadeIn>

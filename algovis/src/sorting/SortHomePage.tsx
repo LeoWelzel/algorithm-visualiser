@@ -6,8 +6,6 @@ import { PageTextPadding } from '../PageTextPadding'
 import { DemoCard } from './DemoCard'
 import { SortingAlgorithmEnum } from './algorithmEnum'
 import { randomArray } from '../util/randomArray'
-import { Row } from '../common/Row'
-import { Spacer } from '../common/Spacer'
 
 import '../styles/Text.scss'
 
