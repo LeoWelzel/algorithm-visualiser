@@ -3,10 +3,14 @@ import { BasicProps, HasChildren } from './basicProps'
 
 import '../styles/Text.scss'
 
-interface TextProps extends BasicProps, HasChildren {}
+interface TextProps extends BasicProps, HasChildren {
+  padBottom?: boolean;
+}
 
 const Text = (props: TextProps & { classNamePrefix: string }) => {
-  const className = `${ props.classNamePrefix } text-pad-small-bottom ` + props.className ?? '';
+  const className = `${ props.classNamePrefix } ` +
+    (props.padBottom === false ? '' : 'text-pad-small-bottom ') +
+    props.className ?? '';
 
   return (
     <div
@@ -19,16 +23,16 @@ const Text = (props: TextProps & { classNamePrefix: string }) => {
 }
 
 export const Title = (props: TextProps) =>
-  <Text { ...props } classNamePrefix='text-large3 text-pad-small-bottom'>
+  <Text { ...props } classNamePrefix='text-large3'>
     { props.children } 
   </Text>
 
 export const Subtitle = (props: TextProps) =>
-  <Text { ...props } classNamePrefix='text-large text-pad-small-bottom'>
+  <Text { ...props } classNamePrefix='text-large'>
     { props.children }
   </Text>
 
 export const Body = (props: TextProps) =>
-  <Text { ...props } classNamePrefix='text-pad-small-bottom'>
+  <Text { ...props } classNamePrefix=''>
     { props.children } 
   </Text>

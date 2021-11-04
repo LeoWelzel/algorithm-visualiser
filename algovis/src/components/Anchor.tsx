@@ -7,6 +7,7 @@ import './Anchor.scss'
 interface AnchorProps extends BasicProps, HasChildren {
   route: string;
   color?: boolean;
+  action?: () => void;
 }
 
 export const Anchor = (props: AnchorProps) => {
@@ -21,7 +22,12 @@ export const Anchor = (props: AnchorProps) => {
     <div
       style={ style }
       className={ className }
-      onClick={ () => history.push(props.route)}
+      onClick={ () => {
+        if (props.action !== undefined)
+          props.action();
+
+        history.push(props.route)
+      }}
     >
       { props.children }
     </div>

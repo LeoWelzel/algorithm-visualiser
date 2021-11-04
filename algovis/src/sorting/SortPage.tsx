@@ -2,13 +2,10 @@ import React, { useState } from 'react'
 import FadeIn from 'react-fade-in';
 import { Route, Switch } from 'react-router-dom';
 import { HasSize } from '../common/hasSize';
-import { Card } from '../components/Card';
-import { Grid } from '../components/Grid';
 import { DefaultPage } from '../DefaultPage';
 import { Routes } from '../routes';
 import { shuffle } from '../util/shuffle';
 import { SortingAlgorithmEnum } from './algorithm';
-import { HeapsortPage } from './HeapsortPage';
 import { SortingRoutes } from './routes';
 import { SortAlgoPageTemplate } from './SortAlgoPageTemplate';
 import { SortHomePage } from './SortHomePage';
@@ -37,17 +34,23 @@ export const SortPage = (props: HasSize) => {
         </Route>
         <Route path={ SortingRoutes.quicksort }>
           <SortAlgoPageTemplate
+            array={ array }
             selectedIndex={ SortingAlgorithmEnum.Quicksort }
+            { ...props }
           />
         </Route>
         <Route path={ SortingRoutes.mergesort }>
           <SortAlgoPageTemplate
+            array={ array }
             selectedIndex={ SortingAlgorithmEnum.Mergesort }
+            { ...props }
           />
         </Route>
         <Route path={ SortingRoutes.heapsort }>
           <SortAlgoPageTemplate
+            array={ array }
             selectedIndex={ SortingAlgorithmEnum.Heapsort }
+            { ...props }
           />
         </Route>
         <Route path={'*'}>

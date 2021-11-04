@@ -1,11 +1,11 @@
 import React from 'react'
 import { Canvas } from '../common/Canvas'
-import { HasSize } from '../common/hasSize';
+import { HasSize, HasSizeRange } from '../common/hasSize';
 
-interface SortingCanvasProps extends HasSize {
+interface SortingCanvasProps extends HasSize, HasSizeRange {
   drawingWidthProportion: number;
   drawingHeightProportion: number;
-  gapProportion: number;
+  barProportion: number;
   array: number[];
 
   fillColour?: string;
@@ -13,18 +13,30 @@ interface SortingCanvasProps extends HasSize {
 }
 
 export const SortingCanvas = (props: SortingCanvasProps) => {
+  const computeDimension = (given: number, max: number | undefined, min: number | undefined) => {
+    if (max !== undefined && given > max)
+      return max;
+    else if (min !== undefined && given < min)
+      return min;
+    else
+      return given;
+  }
+
+  const width = computeDimension(props.width, props.maxWidth, props.minWidth);
+  const height = computeDimension(props.height, props.maxHeight, props.minHeight);
+
   const fillColour = props.fillColour ?? '#29a0f0';
 
   const drawFunction = (context: CanvasRenderingContext2D, frameCount: number) => {
     context.fillStyle = fillColour;
 
-    const drawingHeight = props.height * props.drawingHeightProportion;
-    const startingY = (props.height - drawingHeight) / 2
+    const drawingHeight = height * props.drawingHeightProportion;
+    const startingY = (height - drawingHeight) / 2
 
-    const drawingWidth = props.width * props.drawingWidthProportion;
+    const drawingWidth = width * props.drawingWidthProportion;
     const stripWidth = drawingWidth / props.array.length;
-    const barWidth = stripWidth * props.gapProportion;
-    const startingX = (props.width - drawingWidth + stripWidth - barWidth) / 2;
+    const barWidth = stripWidth * (props.barProportion);
+    const startingX = (width - drawingWidth + stripWidth - barWidth) / 2;
 
     for (let x = 0; x < props.array.length; x++) {
       const xCoord = startingX + (x * stripWidth);
@@ -35,10 +47,12 @@ export const SortingCanvas = (props: SortingCanvasProps) => {
     }
   }
 
+  console.log(width, height)
+
   return (
     <Canvas
-      width={ props.width }
-      height={ props.height }
+      width={ width }
+      height={ height }
       background={ props.background ?? '#fff' }
       drawFunction={ drawFunction }
     />
