@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import FadeIn from 'react-fade-in'
 import { Body, Subtitle, Title } from '../common/Text'
 import { SelectionPanel } from '../components/SelectionPanel'
-import { getSortingAlgorithmPath, getSortingAlgorithmName, SortingAlgorithmEnum, getSortingAlgorithmDescription, getSortingAlgorithm, getSortingAlgorithmColour } from './algorithmEnum'
+import { getSortingAlgorithmPath, getSortingAlgorithmName, SortingAlgorithmEnum, getSortingAlgorithmDescription, getSortingAlgorithm } from './algorithmEnum'
 
 import { PageTextPadding } from '../PageTextPadding'
 import { SortingCanvas } from './SortingCanvas'

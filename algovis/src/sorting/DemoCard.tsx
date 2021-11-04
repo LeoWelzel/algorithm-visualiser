@@ -9,6 +9,7 @@ import { SortingCanvas } from './SortingCanvas'
 import { getSortingAlgorithm, getSortingAlgorithmColour, getSortingAlgorithmName, getSortingAlgorithmPath, SortingAlgorithmEnum } from './algorithmEnum'
 import { SortingType } from './sort'
 import { useHistory } from 'react-router'
+import { Routes } from '../routes'
 
 import '../styles/Text.scss'
 
@@ -17,6 +18,8 @@ interface DemoCardProps {
   array: SortingType[];
   interval?: number;
   resetInterval?: number;
+  linkToSortingHome?: boolean;
+  title?: string;
 }
 
 export const DemoCard = (props: DemoCardProps) => {
@@ -61,12 +64,16 @@ export const DemoCard = (props: DemoCardProps) => {
     <div
       ref={ containerRef }
       onMouseEnter={ () => setRunning(true) }
-      onClick={ () => history.push(getSortingAlgorithmPath(props.algorithm)) }
+      onClick={ () => {
+        const path = props.linkToSortingHome === true ? Routes.sorting : getSortingAlgorithmPath(props.algorithm);
+
+        history.push(path)
+      } }
     >
       <Card>
         <Column>
           <Body className='text-align-center'>
-            { getSortingAlgorithmName(props.algorithm) }
+            { props.title ?? getSortingAlgorithmName(props.algorithm) }
           </Body>
           <Row>
             <Spacer/>

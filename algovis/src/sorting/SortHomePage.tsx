@@ -6,25 +6,25 @@ import { PageTextPadding } from '../PageTextPadding'
 import { DemoCard } from './DemoCard'
 import { SortingAlgorithmEnum } from './algorithmEnum'
 import { randomArray } from '../util/randomArray'
+import { Row } from '../common/Row'
+import { Spacer } from '../common/Spacer'
+
+import '../styles/Text.scss'
 
 export const SortHomePage = () => {
   const cardArrayLength = 16;
 
   return (
     <FadeIn>
-      <PageTextPadding bottom={ false }>
-        <Title>
+      <PageTextPadding className='text-align-center' bottom={ false }>
+        <Title >
           Sorting algorithms
         </Title>
       </PageTextPadding>
-      <PageTextPadding top={ false } bottom={ false }>
+      <PageTextPadding className='text-align-center' top={ false } bottom={ false }>
         <Body>
           To order a sequence, we use sorting algorithms.
-          <br/>
-        </Body>
-      </PageTextPadding>
-      <PageTextPadding top={ false } bottom={ false }>
-        <Body>
+          <br/><br/>
           Get started by chosing an algorithm.
         </Body>
       </PageTextPadding>
