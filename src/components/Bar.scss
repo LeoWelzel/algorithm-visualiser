@@ -1,7 +1,13 @@
 @import '../index.scss';
 
 .bar-container {
-  height: 4rem;
   background: $black3;
   color: $white3;
+}
+
+$bar-container-height: 4rem;
+
+.bar-container-fixed-height {
+  @extend .bar-container;
+  height: $bar-container-height;
 }

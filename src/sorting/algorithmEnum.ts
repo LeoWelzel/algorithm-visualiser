@@ -40,5 +40,3 @@ export const getSortingAlgorithm = (algorithmEnum: SortingAlgorithmEnum) =>
 export const getSortingAlgorithmColour = (algorithmEnum: SortingAlgorithmEnum) =>
   algorithmEnum === SortingAlgorithmEnum.Quicksort ? '#0000ff' :
   algorithmEnum === SortingAlgorithmEnum.Mergesort ? '#00ffcc' : '#ccff00'
-
-// TODO: remove this and put straight in SortPage.tsx

@@ -22,11 +22,9 @@ $page-body-padding: $large2;
   padding-right: $page-body-padding;
 }
 
-// TODO: use same responsivity as hugging-face
-
 @media screen and (min-width: $responsive-min-width) {
   .page-body {
-    min-width: calc(500px - 4rem /* $responsive-max-width - $page-body-padding */);
+    min-width: calc(500px - 4rem);
   }
 }
 

@@ -11,7 +11,7 @@ import '../styles/Text.scss'
 import './Bar.scss'
 
 export const Header = () => 
-  <Column className='unselectable bar-container'>
+  <Column className='unselectable bar-container-fixed-height'>
     <Spacer/>
     <Row>
       <Spacer/>
