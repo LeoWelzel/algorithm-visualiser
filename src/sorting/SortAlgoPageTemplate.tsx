@@ -66,8 +66,6 @@ export const SortAlgoPageTemplate = (props: SortAlgoPageTemplateProps) => {
     setSortingStateIndex(0);
     setSortingComplete(true);
 
-    console.log({ numStates: result.length })
-
   }, [props.array, props.algorithm])
 
   const createNewArray = () => {

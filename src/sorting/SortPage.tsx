@@ -30,6 +30,7 @@ export const SortPage = (props: HasSize) => {
             setArray={ setArray }
             resetArray={ () => setArray(randomArray(arrayLength)) }
             algorithm={ SortingAlgorithmEnum.Quicksort }
+            interval={ 40 }
             { ...props }
           />
         </Route>
@@ -41,6 +42,7 @@ export const SortPage = (props: HasSize) => {
             setArray={ setArray }
             resetArray={ () => setArray(randomArray(arrayLength)) }
             algorithm={ SortingAlgorithmEnum.Mergesort }
+            interval={ 50 }
             { ...props }
           />
         </Route>
@@ -52,6 +54,7 @@ export const SortPage = (props: HasSize) => {
             setArray={ setArray }
             resetArray={ () => setArray(randomArray(arrayLength)) }
             algorithm={ SortingAlgorithmEnum.Heapsort }
+            interval={ 20 }
             { ...props }
           />
         </Route>

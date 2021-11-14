@@ -28,6 +28,8 @@ export const SortingCanvas = (props: SortingCanvasProps) => {
 
   const fillColour = props.fillColour ?? '#29a0f0';
 
+  const length = props.array.length;
+
   const drawFunction = (context: CanvasRenderingContext2D, frameCount: number) => {
     context.fillStyle = fillColour;
 
@@ -35,15 +37,15 @@ export const SortingCanvas = (props: SortingCanvasProps) => {
     const startingY = (height - drawingHeight) / 2
 
     const drawingWidth = width * props.drawingWidthProportion;
-    const stripWidth = drawingWidth / props.array.length;
+    const stripWidth = drawingWidth / length;
     const barWidth = stripWidth * (props.barProportion);
     const startingX = (width - drawingWidth + stripWidth - barWidth) / 2;
 
-    for (let x = 0; x < props.array.length; x++) {
+    for (let x = 0; x < length; x++) {
       const xCoord = startingX + (x * stripWidth);
 
       context.fillRect(
-        xCoord, startingY, barWidth, drawingHeight * props.array[x] / props.array.length
+        xCoord, startingY, barWidth, drawingHeight * props.array[x] / length
       )
     }
   }
