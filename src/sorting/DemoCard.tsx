@@ -6,10 +6,13 @@ import { Body } from '../common/Text'
 import { useComponentSize } from '../common/useComponentSize'
 import { Card } from '../components/Card'
 import { SortingCanvas } from './SortingCanvas'
-import { getSortingAlgorithm, getSortingAlgorithmColour, getSortingAlgorithmName, getSortingAlgorithmPath, SortingAlgorithmEnum } from './algorithmEnum'
+import { getSortingAlgorithm,
+  getSortingAlgorithmColour,
+  getSortingAlgorithmName,
+  getSortingAlgorithmPath,
+  SortingAlgorithmEnum } from './algorithmEnum'
 import { SortingType } from './sort'
 import { useHistory } from 'react-router'
-import { Routes } from '../routes'
 
 import '../styles/Text.scss'
 

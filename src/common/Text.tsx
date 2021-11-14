@@ -9,7 +9,7 @@ interface TextProps extends BasicProps, HasChildren {
 
 const Text = (props: TextProps & { classNamePrefix: string }) => {
   const className = `${ props.classNamePrefix } ` +
-    (props.padBottom === false ? '' : 'text-pad-small-bottom ') +
+    (props.padBottom ?? 'text-pad-small-bottom ') +
     props.className ?? '';
 
   return (
