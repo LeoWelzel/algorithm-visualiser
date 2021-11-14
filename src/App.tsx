@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import { AboutPage } from './AboutPage';
 import { Column } from './common/Column';
 import { Row } from './common/Row';
@@ -37,7 +37,7 @@ export const App = () => {
   }
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Column className='page-container'>
         <Header/>
         <Row style={{ flex: 1 }}>
@@ -75,6 +75,6 @@ export const App = () => {
         </Row>
         <Footer/>
       </Column>
-    </BrowserRouter>
+    </HashRouter>
   );
 }

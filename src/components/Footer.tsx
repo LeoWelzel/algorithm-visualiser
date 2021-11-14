@@ -26,7 +26,6 @@ export const Footer = () => {
   const Copyright = () =>
     <div>Copyright © 2021</div>
 
-  // TODO: make responsive
   return (
     <div className='unselectable'>
       <div className='responsive-hide-children-small'>

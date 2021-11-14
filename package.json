@@ -1,7 +1,7 @@
 {
   "homepage": "http://leowelzel.github.io/algorithm-visualiser",
 
-  "name": "sorting-visualiser",
+  "name": "algorithm-visualiser",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

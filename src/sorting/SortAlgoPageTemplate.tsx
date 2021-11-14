@@ -161,7 +161,6 @@ export const SortAlgoPageTemplate = (props: SortAlgoPageTemplateProps) => {
             drawingHeightProportion={ 1 }
             barProportion={ 0.8 }
             array={ props.array }
-            // fillColour={ getSortingAlgorithmColour(props.algorithm) }
           />
           <Spacer/>
         </Row>
