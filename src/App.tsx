@@ -33,7 +33,6 @@ export const App = () => {
     setRunning: setRunning,
     setArray: setArray,
     resetArray: () => setArray(randomArray(arrayLength)),
-    algorithm: SortingAlgorithmEnum.Quicksort,
     interval: 40
   }
 
@@ -53,16 +52,19 @@ export const App = () => {
               <Route exact path={ SortingRoutes.quicksort }>
                 <SortAlgoPageTemplate
                   { ...sortProps }
+                  algorithm={ SortingAlgorithmEnum.Quicksort }
                 />
               </Route>
               <Route exact path={ SortingRoutes.mergesort }>
                 <SortAlgoPageTemplate
                   { ...sortProps }
+                  algorithm={ SortingAlgorithmEnum.Mergesort }
                 />
               </Route>
               <Route exact path={ SortingRoutes.heapsort }>
                 <SortAlgoPageTemplate
                   { ...sortProps }
+                  algorithm={ SortingAlgorithmEnum.Heapsort }
                 />
               </Route>
               <Route exact={ true } path={ Routes.about } component={ AboutPage }/>
