@@ -1,4 +1,6 @@
 {
+  "homepage": "http://leowelzel.github.io/algorithm-visualiser",
+
   "name": "sorting-visualiser",
   "version": "0.1.0",
   "private": true,
@@ -12,6 +14,7 @@
     "@types/react-dom": "^17.0.0",
     "@types/react-router": "^5.1.17",
     "@types/react-router-dom": "^5.3.2",
+    "gh-pages": "^3.2.3",
     "node-sass": "^5.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -26,7 +29,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
