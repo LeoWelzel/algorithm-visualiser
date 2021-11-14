@@ -18,7 +18,6 @@ interface DemoCardProps {
   array: SortingType[];
   interval?: number;
   resetInterval?: number;
-  linkToSortingHome?: boolean;
   title?: string;
 }
 
@@ -65,7 +64,7 @@ export const DemoCard = (props: DemoCardProps) => {
       ref={ containerRef }
       onMouseEnter={ () => setRunning(true) }
       onClick={ () => {
-        const path = props.linkToSortingHome === true ? Routes.sorting : getSortingAlgorithmPath(props.algorithm);
+        const path = getSortingAlgorithmPath(props.algorithm);
 
         history.push(path)
       } }

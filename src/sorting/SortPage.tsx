@@ -19,10 +19,10 @@ export const SortPage = (props: HasSize) => {
   return (
     <FadeIn>
       <Switch>
-        <Route exact path={ Routes.sorting }>
+        <Route exact path={ Routes.home }>
           <SortHomePage/>
         </Route>
-        <Route path={ SortingRoutes.quicksort }>
+        <Route exact path={ SortingRoutes.quicksort }>
           <SortAlgoPageTemplate
             running={ running }
             setRunning={ setRunning }
@@ -34,7 +34,7 @@ export const SortPage = (props: HasSize) => {
             { ...props }
           />
         </Route>
-        <Route path={ SortingRoutes.mergesort }>
+        <Route exact path={ SortingRoutes.mergesort }>
           <SortAlgoPageTemplate
             running={ running }
             setRunning={ setRunning }
@@ -46,7 +46,7 @@ export const SortPage = (props: HasSize) => {
             { ...props }
           />
         </Route>
-        <Route path={ SortingRoutes.heapsort }>
+        <Route exact path={ SortingRoutes.heapsort }>
           <SortAlgoPageTemplate
             running={ running }
             setRunning={ setRunning }

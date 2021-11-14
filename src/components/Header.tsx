@@ -16,7 +16,7 @@ export const Header = () =>
     <Row>
       <Spacer/>
       <Anchor className='text-large3 hover-cursor-pointer' color={ false } route={ Routes.home }>
-        AlgoVis
+        Sorting Visualiser
       </Anchor>
       <Spacer/>
     </Row>

@@ -61,7 +61,7 @@ export const SelectionPanel = (props: SelectionPanelProps) => {
         <Column className='responsive-hide-children-small'>
           <Spacer/>
           <Subtitle className='selection-panel-padding-sides'>
-            <Anchor route={ Routes.sorting }
+            <Anchor route={ Routes.home }
               color={ false }>
               { props.title }
             </Anchor>
