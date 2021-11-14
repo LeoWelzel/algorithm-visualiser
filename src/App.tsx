@@ -24,8 +24,18 @@ export const App = () => {
   const [running, setRunning] = useState(false);
 
   const pageBodyRef = useRef<HTMLDivElement>(null);
-
   const sizeProps = useComponentSize(pageBodyRef);
+
+  const sortProps = {
+    ...sizeProps,
+    running: running,
+    array: array,
+    setRunning: setRunning,
+    setArray: setArray,
+    resetArray: () => setArray(randomArray(arrayLength)),
+    algorithm: SortingAlgorithmEnum.Quicksort,
+    interval: 40
+  }
 
   return (
     <BrowserRouter>
@@ -42,38 +52,17 @@ export const App = () => {
               </Route>
               <Route exact path={ SortingRoutes.quicksort }>
                 <SortAlgoPageTemplate
-                  running={ running }
-                  setRunning={ setRunning }
-                  array={ array }
-                  setArray={ setArray }
-                  resetArray={ () => setArray(randomArray(arrayLength)) }
-                  algorithm={ SortingAlgorithmEnum.Quicksort }
-                  interval={ 40 }
-                  { ...sizeProps }
+                  { ...sortProps }
                 />
               </Route>
               <Route exact path={ SortingRoutes.mergesort }>
                 <SortAlgoPageTemplate
-                  running={ running }
-                  setRunning={ setRunning }
-                  array={ array }
-                  setArray={ setArray }
-                  resetArray={ () => setArray(randomArray(arrayLength)) }
-                  algorithm={ SortingAlgorithmEnum.Mergesort }
-                  interval={ 50 }
-                  { ...sizeProps }
+                  { ...sortProps }
                 />
               </Route>
               <Route exact path={ SortingRoutes.heapsort }>
                 <SortAlgoPageTemplate
-                  running={ running }
-                  setRunning={ setRunning }
-                  array={ array }
-                  setArray={ setArray }
-                  resetArray={ () => setArray(randomArray(arrayLength)) }
-                  algorithm={ SortingAlgorithmEnum.Heapsort }
-                  interval={ 20 }
-                  { ...sizeProps }
+                  { ...sortProps }
                 />
               </Route>
               <Route exact={ true } path={ Routes.about } component={ AboutPage }/>
